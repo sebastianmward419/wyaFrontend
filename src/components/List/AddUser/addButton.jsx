@@ -1,10 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-const AddButton = props => (
+import InfoPopup from './FillInfo/fillInfoPopup.jsx';
+
+const AddButton = props => {
+    const [popUp, togglePopup] = useState (false);
+
+   return (
     <div>
-        <button onClick={sendInfo} style={buttonStyle}>Add officemate</button>
+        <button onClick={() => togglePopup (!popUp)} style={buttonStyle}>Add officemate</button>
+        {
+            popUp &&
+            <InfoPopup />
+        }
     </div>
-)
+   ) 
+}
 
 const sendInfo = officeMAteInfo => {
     fetch ('/api/post/officemate', officeMAteInfo)
