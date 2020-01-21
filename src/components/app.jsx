@@ -1,7 +1,8 @@
 import React from 'react';
 
-import List       from './List/list.jsx';
+import List        from './List/list.jsx';
 import HeaderMain from './Header/header_main.jsx';
+import AddButton   from './List/AddUser/addButton.jsx';
 
 class App extends React.Component {
 
@@ -13,6 +14,7 @@ class App extends React.Component {
         <div>
             <HeaderMain />
             <List />
+            <AddButton />
         </div>
     )
 }

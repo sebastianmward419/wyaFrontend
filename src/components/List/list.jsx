@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import People from '../MockData/people.js';
 
-import ListPanel from './list_panel.jsx';
+import ListPanel  from './list_panel.jsx';
 
 const List = props => {
     const [users, setUsers] = useState ([]);
