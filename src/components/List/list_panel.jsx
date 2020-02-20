@@ -1,12 +1,12 @@
 import React from 'react';
-
 import Status from './status.jsx';
+// import '../../styles/List/list_panel.css';
 
 const ListPanel = props => (
     <li style={ListItemStyle}>
         <Status status={props.info.status} />
-        <div style={ListItemTextStyle}>{'Name: ' + props.info.name}</div>
-        <div style={ListItemTextStyle}>{'Location: ' + props.info.location}</div>
+        <div style={ListItemTextStyle}>{props.info.name}</div>
+        <div style={ListItemTextStyle}>{props.info.location}</div>
     </li>
 )
 
