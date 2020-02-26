@@ -16,7 +16,6 @@ const List = props => {
     return (
         <div>
             <ul id='listHeader'>
-                <li>Status</li>
                 <li>Name</li>
                 <li>Location</li>
             </ul>
