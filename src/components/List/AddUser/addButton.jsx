@@ -6,8 +6,8 @@ const AddButton = props => {
     const [popUp, togglePopup] = useState (false);
 
    return (
-    <div>
-        <button onClick={() => togglePopup (!popUp)} style={buttonStyle}>Add officemate</button>
+    <div style={buttonStyle.div}>
+        <button onClick={() => togglePopup (!popUp)} style={buttonStyle.button}>Add officemate</button>
         {
             popUp &&
             <InfoPopup />
@@ -26,8 +26,16 @@ export default AddButton;
 
 const buttonStyle = 
 {
-    width: '75px',
-    height: '75px',
-    border: '1px solid black',
-    backgroundColor: 'white',
+    div: 
+    {
+        margin: '10px',
+        padding: '20px'
+    },
+    button: 
+    {
+        width: '75px',
+        height: '75px',
+        border: '1px solid black',
+        backgroundColor: 'white',
+    }
 }
