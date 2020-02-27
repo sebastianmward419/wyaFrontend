@@ -1,10 +1,15 @@
 import React from 'react';
 
+import HeaderMain  from './Header/header_main.jsx';
 import List        from './List/list.jsx';
-import HeaderMain from './Header/header_main.jsx';
+import Group       from './Group/group.jsx';
 import AddButton   from './List/AddUser/addButton.jsx';
 
 class App extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = { showGroup: false }
+    }
 
     componentDidMount () {
         document.body.style.margin = 0;
@@ -14,6 +19,7 @@ class App extends React.Component {
         <div>
             <HeaderMain />
             <List />
+            {this.state.showGroup && <Group />}
             <AddButton />
         </div>
     )

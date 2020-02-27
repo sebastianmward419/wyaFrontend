@@ -7,7 +7,7 @@ class HeaderMain extends React.Component {
             <ul id="navbar">
                 <li><a href="#">List</a></li>
                 <li><a href="#">Calendar</a></li>
-                <li><a href="#">Group</a></li>
+                <li onClick={this.props.showGroup}>Group</li>
             </ul>
 
             <h1>WYA</h1>
