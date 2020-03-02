@@ -1,6 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
+
+import ChangeStatusPopup from './ChangeInfo/ChangeStatus/changeStatusPopup.jsx';
+
+import '../../styles/List/status.css';
 
 const Status = props => {
+    const [popup, togglePopup] = useState (false);
+
     let color;
 
     switch (props.status)
@@ -13,16 +19,15 @@ const Status = props => {
             color = '#00defc'; break;
     }
 
-    return (<div><span style={{...StatusDotStyle, backgroundColor: color}}></span></div>)
+    return (
+    <div>
+        <span onClick={() => togglePopup (!popup)} className='statusDotStyle' style={{backgroundColor: color}}></span>
+
+        {
+            popup &&
+            <ChangeStatusPopup />
+        }
+    </div>)
 }
 
 export default Status;
-
-const StatusDotStyle =
-{
-    height: '25px',
-    width: '25px',
-    borderRadius: '50%',
-    display: 'inline-block',
-    margin: '10px'
-}

@@ -1,6 +1,7 @@
 import React from 'react';
 import App from '../app.jsx'
 import '../../index.css'
+import '../../styles/Header/header_main.css';
 
 class HeaderMain extends React.Component {
     render = () => (

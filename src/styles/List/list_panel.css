@@ -1,0 +1,11 @@
+.listItemStyle {
+    display: flex;
+    list-style: none;
+    padding: 10px;
+}
+
+.listItemTextStyle {
+    margin: 10px;
+    font-size: 30px;
+    width: 400px;
+}
