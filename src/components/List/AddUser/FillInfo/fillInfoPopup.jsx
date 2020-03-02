@@ -2,14 +2,14 @@ import React from 'react';
 
 import useInput from '../../../Helpers/Inputs/useInput.jsx';
 
-// {
+// example JSON to post
+
 //     "id": "5e445775b3ea67000b5fb0a1",
 //     "email": "tod@gmail.com",
 //     "password": "DEFAULT",
 //     "status": "yes",
 //     "location": "nowhere",
 //     "name": "bitch lastname"
-// }
 
 const InfoPopup = props => {
     const {value: first_name, bind: bind_first_name, reset: reset_first_name} = useInput ('');
