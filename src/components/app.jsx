@@ -23,6 +23,13 @@ class App extends React.Component {
             <AddButton />
         </div>
     )
+
+    static triggerShowGroup = () => {
+        console.log('test');
+        console.log(this.state);
+        console.log(this.state.showGroup);
+        this.state.showGroup = true;
+    }
 }
 
 export default App;

@@ -1,4 +1,5 @@
 import React from 'react';
+import App from '../app.jsx'
 import '../../index.css'
 
 class HeaderMain extends React.Component {
@@ -7,7 +8,7 @@ class HeaderMain extends React.Component {
             <ul id="navbar">
                 <li><a href="#">List</a></li>
                 <li><a href="#">Calendar</a></li>
-                <li onClick={this.props.showGroup}>Group</li>
+                <li><a onClick={App.triggerShowGroup}>Group</a></li>
             </ul>
 
             <h1>WYA</h1>
