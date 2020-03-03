@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import People from '../MockData/people.js';
+import React, { useEffect } from 'react';
+
+import { connect } from 'react-redux';
+
 import ListPanel  from './list_panel.jsx';
 import '../../styles/List/list.css';
 
+import fetchUsers from '../../utils/fetches/fetchUsers.js';
+
+
 const List = props => {
-    const [users, setUsers] = useState ([]);
 
     useEffect (() => {
-        fetch ('/api/get/officemates')
-        .then (resp => resp.json ())
-        .then (data => setUsers (data))
-        .catch (err => console.log (err))
-    }, []);
+       props.fetchUsers ();
+    });
 
     return (
         <div>
@@ -20,11 +21,14 @@ const List = props => {
                 <li>Location</li>
             </ul>
             <ul>
-                {console.log (users)}
-                {users.map ((person, id) => <ListPanel info={person} key={id + person.name}/>)}     
+                {props.users.map ((person, id) => <ListPanel info={person} key={id + person.name}/>)}     
             </ul>
         </div> 
     )
 }
 
-export default List;
+const mapStateToProps = state => ({
+    users: state.ListReducer.users
+})
+
+export default connect (mapStateToProps, {fetchUsers})(List);

@@ -1,20 +1,31 @@
 const initialState = 
 {
     idSelected: null,
-    users     : []
+    pending   : false,
+    users     : [],
+    err       : null
 }
 
-const listReducer = (state = [], action) => {
+const listReducer = (state = initialState, action) => {
 
-    switch (action)
+    switch (action.type)
     {
         case 'SELECT_ID':
             return initialState.idSelected = action.id
+
+        case 'SET_USERS_PENDING':
+            return {...state, pending: true}
+
         case 'SET_USERS':
-            return initialState.users = action.users
+            return {...state, users: action.users}
+
+        case 'SET_USERS_ERROR':
+            return {...state, err: action.err}
+
+        default:
+            return state
     }
         
-    return state;
 }
 
 export default listReducer;
