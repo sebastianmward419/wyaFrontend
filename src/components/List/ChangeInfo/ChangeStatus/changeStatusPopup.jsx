@@ -1,24 +1,15 @@
 import React from 'react';
 
-const changeStatus = color => {
-   // fetch ('')
+import '../../../../styles/List/ChangeInfo/ChangeStatus/changeStatusPopup.css';
+
+const changeStatus = e => {
+    console.log (e);
 }
 
 const ChangeStatusPopup = props => (
-    <div style={formStyles}>
+    <div onClick={changeStatus} className='status_popup_menu'>
         yea
     </div>
 )
 
 export default ChangeStatusPopup;
-
-const formStyles = 
-{
-    div:
-    {
-        boxShadow: '5px 10px 8px 10px#888888',
-        width: '150px',
-        height: '150px',
-        padding: '20px',
-    }
-}
