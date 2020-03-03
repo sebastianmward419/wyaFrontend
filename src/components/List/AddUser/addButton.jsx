@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
+
 import InfoPopup from './FillInfo/fillInfoPopup.jsx';
+
 import '../../../styles/List/AddUser/addButton.css';
 
 const AddButton = props => {

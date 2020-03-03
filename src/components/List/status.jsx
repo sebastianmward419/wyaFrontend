@@ -4,6 +4,12 @@ import ChangeStatusPopup from './ChangeInfo/ChangeStatus/changeStatusPopup.jsx';
 
 import '../../styles/List/status.css';
 
+const test = e => {
+    console.log (e);
+}
+
+//() => togglePopup (!popup)
+
 const Status = props => {
     const [popup, togglePopup] = useState (false);
 
