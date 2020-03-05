@@ -1,13 +1,24 @@
 import React from 'react';
-import Status from './status.jsx';
+
+import { connect } from 'react-redux';
+
+import Status   from './status.jsx';
+import Location from './location.jsx';
+
 import '../../styles/List/list_panel.css';
 
+import { selectId } from '../../storage/actions/listActions.js';
+
 const ListPanel = props => (
-    <li class='listItemStyle'>
+    <li className='listItemStyle' onClick={() => props.selectId (props.id)}>
         <Status status={props.info.status} />
-        <div class='listItemTextStyle'>{props.info.name}</div>
-        <div class='listItemTextStyle'>{props.info.location}</div>
+        <div className='listItemTextStyle'>{props.info.name}</div>
+        <Location location={props.info.location}/>
     </li>
 )
 
-export default ListPanel;
+const mapDispatchToProps = dispatch => ({
+    selectId: id => dispatch (selectId (id))
+})
+
+export default connect (null, mapDispatchToProps)(ListPanel);

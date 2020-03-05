@@ -11,7 +11,7 @@ const listReducer = (state = initialState, action) => {
     switch (action.type)
     {
         case 'SELECT_ID':
-            return initialState.idSelected = action.id
+            return {...state, idSelected: action.id}
 
         case 'SET_USERS_PENDING':
             return {...state, pending: true}

@@ -21,7 +21,7 @@ const List = props => {
                 <li>Location</li>
             </ul>
             <ul>
-                {props.users.map ((person, id) => <ListPanel info={person} key={id + person.name}/>)}     
+                {props.users.map ((person, id) => <ListPanel info={person} id={id} key={id + person.name}/>)}     
             </ul>
         </div> 
     )
