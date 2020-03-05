@@ -1,0 +1,11 @@
+.change_location_section {
+    position: absolute;
+    width: 20em;
+    height: 2em;
+    background: white;
+    border: solid 2px black;
+}
+
+.change_location_input {
+
+}
