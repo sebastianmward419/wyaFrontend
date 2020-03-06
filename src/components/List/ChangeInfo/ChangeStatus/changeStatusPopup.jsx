@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { connect } from 'react-redux';
+import StatusIcon from './statusIcon.jsx';
+import Statuses   from '../../../../utils/status/statuses.js';
 
 import '../../../../styles/List/ChangeInfo/ChangeStatus/changeStatusPopup.css';
 
@@ -11,26 +12,18 @@ const ChangeStatusPopup = props => {
         {color: '#13fc00', statusCode: 'yes'}, {color: '#a00be0', statusCode: 'WFH'}
     ]
    
-    const changeStatus = e => {
-        let userToChange = props.users [props.currentId];
-        console.log (e)
-        userToChange.status = 'no';
-    }
-   
     return (
-   <div onClick={changeStatus} className='status_popup_menu'>
+   <div className='status_popup_menu'>
         
         {
-        statuses.map ((statusObj, id) => (
-            <span key={id} className='statusDotStyle' style={{backgroundColor: statusObj.color}}></span>
+        Object.keys (Statuses).map ((statusObj, id) => (
+            <StatusIcon key={id} statusObj={Statuses[statusObj]} />
         ))
         }
         
     </div>)
 }
 
-const mapStateToProps = state => ({
-    currentId: state.ListReducer.idSelected, users: state.ListReducer.users
-})
 
-export default connect (mapStateToProps, null)(ChangeStatusPopup);
+
+export default ChangeStatusPopup;

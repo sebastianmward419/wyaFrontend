@@ -1,23 +1,14 @@
 import React, {useState} from 'react';
 
 import ChangeStatusPopup from './ChangeInfo/ChangeStatus/changeStatusPopup.jsx';
+import Statuses          from '../../utils/status/statuses.js';
 
 import '../../styles/List/status.css';
 
 const Status = props => {
     const [popup, togglePopup] = useState (false);
 
-    let color;
-
-    switch (props.status)
-    {
-        case 'yes':
-            color = '#13fc00'; break;
-        case 'no':
-            color = '#fc0000'; break;
-        case 'maybe':
-            color = '#00defc'; break;
-    }
+    let color = Statuses[props.status] ? Statuses[props.status].statusColor : 'yellow';
 
     return (
     <div>
