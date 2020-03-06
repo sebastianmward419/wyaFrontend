@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 import ChangeLocationPopup from './ChangeInfo/ChangeLocation/changeLocationPopup.jsx';
-import PopupBackdrop       from '../Helpers/popupBackdrop.jsx';
+
 
 const Location = props => {
     const [popup, togglePopup] = useState (false);
@@ -13,13 +13,13 @@ const Location = props => {
     }
 
     return (
-        <div className='listItemTextStyle' onClick={() => togglePopup (!popup)}>
-            {props.location}
+        <div className='listItemTextStyle'>
+            <span onClick={() => togglePopup (!popup)}>{props.location}</span>
 
             {
                 popup &&
 
-                <PopupBackdrop><ChangeLocationPopup /></PopupBackdrop>
+                <ChangeLocationPopup />
             }
         </div>
     )
