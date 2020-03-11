@@ -2,30 +2,13 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 
+import { UpdateInfo } from '../../../../utils/fetches/updateInfo.js';
+
 const StatusIcon = props => {
-    const changeStatus = e => {
-        let userToChange = props.users [props.currentId];
-        
-        userToChange.status = props.statusObj.statusCode;
-
-        let fetchOptions =
-        {
-            method: 'PUT',
-            headers: 
-            {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify (userToChange)
-        }
-
-        fetch (`/api/update/officemate/${userToChange.id}`, fetchOptions)
-        .then (resp => resp.json ())
-        .then (data => console.log (data))
-        .catch (err => console.log (err))
-    }
+    const changeStatus = () => UpdateInfo (props);
 
     return (
-        <span className='statusDotStyle' onClick={changeStatus} style={{backgroundColor: props.statusObj.statusColor}}>
+        <span title={props.statusObj.explanation} className='statusDotStyle' onClick={changeStatus} style={{backgroundColor: props.statusObj.statusColor}}>
 
         </span>
     )
