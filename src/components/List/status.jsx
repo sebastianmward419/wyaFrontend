@@ -8,11 +8,12 @@ import '../../styles/List/status.css';
 const Status = props => {
     const [popup, togglePopup] = useState (false);
 
-    let color = Statuses[props.status] ? Statuses[props.status].statusColor : 'yellow';
+    let color    = Statuses[props.status] ? Statuses[props.status].statusColor : 'yellow';
+    let statusEx = Statuses[props.status] ? Statuses[props.status].explanation : 'This should\'nt be yellow';
 
     return (
     <div>
-        <span onClick={() => togglePopup (!popup)} className='statusDotStyle' style={{backgroundColor: color}}></span>
+        <span onClick={() => togglePopup (!popup)} className='statusDotStyle' style={{backgroundColor: color}} title={statusEx}></span>
 
         {
             popup &&

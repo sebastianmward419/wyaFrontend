@@ -9,3 +9,20 @@
 .change_location_input {
 
 }
+
+.change_location_ul {
+    background-color: black;
+    font-size: 15px;
+}
+
+.change_location_li {
+    list-style-type: none;
+    background-color: yellowgreen;
+    height: 40px;
+    transition: 0.3s;
+}
+
+.change_location_li:hover {
+    background-color: blanchedalmond;
+
+}
