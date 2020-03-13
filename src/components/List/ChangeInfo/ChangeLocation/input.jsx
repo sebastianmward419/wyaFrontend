@@ -16,10 +16,6 @@ const Input = props => {
         .catch (err => console.log (err))
     }
 
-    const setLocation = e => {
-        console.log (e.target.innerHTML);
-    }
-
     return (
         <div>
             <input onChange={getLocationPredictions} className='change_location_input'></input>

@@ -11,7 +11,7 @@ class App extends React.Component {
     }
 
     render = () => (
-        <div>
+        <div style={{fontFamily: 'Maison Neue, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif'}}>
             <HeaderMain />
             <List />
             <AddButton />
