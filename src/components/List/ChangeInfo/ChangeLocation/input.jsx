@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 
+import { connect } from 'react-redux';
+
+import { UpdateLocation } from '../../../../utils/fetches/updateInfo';
+
 import '../../../../styles/List/ChangeInfo/ChangeLocation/changeLocationPopup.css';
 
 const Input = props => {
@@ -12,6 +16,10 @@ const Input = props => {
         .catch (err => console.log (err))
     }
 
+    const setLocation = e => {
+        console.log (e.target.innerHTML);
+    }
+
     return (
         <div>
             <input onChange={getLocationPredictions} className='change_location_input'></input>
@@ -20,7 +28,7 @@ const Input = props => {
                 locations &&
                 <ul className='change_location_ul'>
                     {locations.map ((location, id) => (
-                        <li key={id} className='change_location_li'>{location.description}</li>
+                        <li key={id} onClick={e => UpdateLocation (props, e.target.innerHTML)} className='change_location_li'>{location.description}</li>
                     ))}
                 </ul>
             }
@@ -28,4 +36,9 @@ const Input = props => {
     )
 }
 
-export default Input;
+const mapStateToProps = state => ({
+    currentId: state.ListReducer.idSelected, users: state.ListReducer.users
+})
+
+
+export default connect (mapStateToProps, null)(Input);
