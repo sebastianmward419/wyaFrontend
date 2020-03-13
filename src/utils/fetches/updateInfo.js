@@ -1,9 +1,5 @@
-export const UpdateInfo = props => {
-    let userToChange = props.users [props.currentId];
-        
-        userToChange.status = props.statusObj.statusCode;
-
-        let fetchOptions =
+const updateFetch =  userToChange => {
+    let fetchOptions =
         {
             method: 'PUT',
             headers: 
@@ -17,4 +13,20 @@ export const UpdateInfo = props => {
         .then (resp => resp.json ())
         .then (data => console.log (data))
         .catch (err => console.log (err))
+}
+
+export const UpdateStatus = props => {
+    let userToChange = props.users [props.currentId];
+        
+        userToChange.status = props.statusObj.statusCode;
+
+        updateFetch (userToChange);
+}
+
+export const UpdateLocation = (props, newLocation) => {
+    let userToChange = props.users [props.currentId];
+
+    userToChange.location = newLocation;
+
+    updateFetch (userToChange);
 }
