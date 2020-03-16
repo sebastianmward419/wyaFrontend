@@ -13,11 +13,11 @@ const Status = props => {
 
     return (
     <div>
-        <span onClick={() => togglePopup (!popup)} className='statusDotStyle' style={{backgroundColor: color}} title={statusEx}></span>
+        <span onClick={() => togglePopup (!popup)}  title={statusEx} className='statusDotStyle' style={{backgroundColor: color}}></span>
 
         {
             popup &&
-            <ChangeStatusPopup />
+            <ChangeStatusPopup toggleStatusPopup={() => togglePopup (!popup)}/>
         }
     </div>)
 }
