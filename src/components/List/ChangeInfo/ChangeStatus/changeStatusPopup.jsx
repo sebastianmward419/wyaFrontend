@@ -11,7 +11,7 @@ const ChangeStatusPopup = props => (
         
         {
         Object.keys (Statuses).map ((statusObj, id) => (
-           <StatusIcon key={id} statusObj={Statuses[statusObj]} />
+           <StatusIcon key={id} statusObj={Statuses[statusObj]} toggleStatusPopup={props.toggleStatusPopup}/>
         ))
         }
         

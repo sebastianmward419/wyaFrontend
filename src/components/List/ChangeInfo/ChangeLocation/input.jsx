@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-
-import { connect } from 'react-redux';
+import        { connect }  from 'react-redux';
 
 import { UpdateLocation, UpdateStatus } from '../../../../utils/fetches/updateInfo';
 
@@ -20,10 +19,8 @@ const Input = props => {
     }
 
     const WFH = innerHTML => {
-        const statusObj = {statusObj: {statusCode: 'WFH'}};
-    
         UpdateLocation (props, innerHTML);
-        UpdateStatus ({...props, ...statusObj})
+        UpdateStatus ({...props, ...{statusObj: {statusCode: 'WFH'}}})
 
         props.togglePopup ();
     }
@@ -51,6 +48,5 @@ const Input = props => {
 const mapStateToProps = state => ({
     currentId: state.ListReducer.idSelected, users: state.ListReducer.users
 })
-
 
 export default connect (mapStateToProps, null)(Input);

@@ -6,7 +6,7 @@ import { UpdateStatus } from '../../../../utils/fetches/updateInfo.js';
 
 const StatusIcon = props => (
    
-    <span title={props.statusObj.explanation} className='statusDotStyle' onClick={() => UpdateStatus (props)} 
+    <span title={props.statusObj.explanation} className='statusDotStyle' onClick={() => {UpdateStatus (props); props.toggleStatusPopup ();}} 
           style={{backgroundColor: props.statusObj.statusColor}}>
     </span>  
 )
