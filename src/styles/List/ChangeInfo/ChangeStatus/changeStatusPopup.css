@@ -1,13 +1,8 @@
 .status_popup_menu {
     position: absolute;
-    border: solid 2px black;
     background: white;
     border-radius: 5px;
     text-align: center;
     padding: 4px;
     transition: 0.3s;
-}
-
-.status_popup_menu:hover {
-    border: 2px solid lime;
 }

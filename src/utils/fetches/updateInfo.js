@@ -11,7 +11,7 @@ const updateFetch =  userToChange => {
 
         fetch (`/api/update/officemate/${userToChange.id}`, fetchOptions)
         .then (resp => resp.json ())
-        .then (data => console.log (data))
+        .then (data => data)
         .catch (err => console.log (err))
 }
 

@@ -6,7 +6,7 @@ import '../../../../styles/List/ChangeInfo/ChangeLocation/changeLocationPopup.cs
 
 const ChangeLocationPopup = props => (
     <div className='change_location_section'>
-        <LocationInput />
+        <LocationInput togglePopup={props.togglePopup}/>
     </div>
 )
 

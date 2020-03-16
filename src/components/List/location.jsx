@@ -13,7 +13,7 @@ const Location = props => {
             {
                 popup &&
 
-                <ChangeLocationPopup />
+                <ChangeLocationPopup togglePopup={() => togglePopup (!popup)}/>
             }
         </div>
     )
