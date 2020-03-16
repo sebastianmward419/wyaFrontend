@@ -25,6 +25,7 @@ const Input = props => {
         UpdateLocation (props, innerHTML);
         UpdateStatus ({...props, ...statusObj})
 
+        props.togglePopup ();
     }
 
     return (
@@ -36,7 +37,8 @@ const Input = props => {
                 {
                     (locations && inputVal.length > 0) &&
                     locations.map ((location, id) => (
-                        <li key={id} onClick={e => UpdateLocation (props, e.target.innerHTML)} className='change_location_li'>{location.description}</li>
+                        <li key={id} onClick={e => {UpdateLocation (props, e.target.innerHTML); props.togglePopup ();}} 
+                            className='change_location_li'>{location.description}</li>
                     ))
                 }
 
