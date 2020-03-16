@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import        { connect }  from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import        { connect }             from 'react-redux';
 
 import { UpdateLocation, UpdateStatus } from '../../../../utils/fetches/updateInfo';
 
@@ -8,6 +8,10 @@ import '../../../../styles/List/ChangeInfo/ChangeLocation/changeLocationPopup.cs
 const Input = props => {
     const [locations, setLocations] = useState ([]);
     const [inputVal , setInputVal ] = useState ('');
+    
+    const locationInput = React.createRef ();
+
+    useEffect (() => locationInput.current.focus())
 
     const getLocationPredictions = e => {
         setInputVal (e.target.value);
@@ -27,7 +31,7 @@ const Input = props => {
 
     return (
         <div>
-            <input onChange={getLocationPredictions} value={inputVal} className='change_location_input'></input>
+            <input ref={locationInput} onChange={getLocationPredictions} value={inputVal} className='change_location_input'></input>
 
             <ul className='change_location_ul'>
 
