@@ -11,9 +11,11 @@ import { selectId } from '../../storage/actions/listActions.js';
 
 const ListPanel = props => (
     <li className='listItemStyle' onClick={() => props.selectId (props.id)}>
+        
         <Status status={props.info.status} />
         <div className='listItemTextStyle'>{props.info.name}</div>
         <Location location={props.info.location}/>
+        
     </li>
 )
 

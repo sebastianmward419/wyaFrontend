@@ -4,4 +4,13 @@
     border-radius: 50%;
     display: inline-block;
     margin: 10px;
+    transition: 0.3s;
 }
+
+.statusDotStyle:hover {
+    height: 30px;
+    width: 30px;
+}
+
+
+
