@@ -6,12 +6,6 @@ import ChangeLocationPopup from './ChangeInfo/ChangeLocation/changeLocationPopup
 const Location = props => {
     const [popup, togglePopup] = useState (false);
 
-    const changePopup = () => {
-        if (popup) {
-            console.log ('');
-        }
-    }
-
     return (
         <div className='listItemTextStyle'>
             <span onClick={() => togglePopup (!popup)}>{props.location}</span>
